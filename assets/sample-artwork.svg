@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-label="RetroType Studio mixed-script title sample">
+  <defs>
+    <linearGradient id="sodaFill" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#ffbf6b"/>
+      <stop offset=".5" stop-color="#ff7965"/>
+      <stop offset="1" stop-color="#ed4d84"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="#f3e9d6"/>
+  <g transform="translate(540 540) scale(.72) translate(-540 -540)">
+    <g transform="translate(0 18)" fill="#b04b63" stroke="#b04b63" stroke-width="13" stroke-linejoin="round" font-family="Arial Black, Avenir Next, PingFang SC, Microsoft YaHei, sans-serif" font-size="183.6" font-weight="900" letter-spacing="2" text-anchor="middle">
+      <text x="540" y="503.3">AFTER HOURS</text>
+      <text x="540" y="701.6">午夜电台</text>
+    </g>
+    <g fill="url(#sodaFill)" stroke="#fff4d5" stroke-width="19" stroke-linejoin="round" paint-order="stroke fill" font-family="Arial Black, Avenir Next, PingFang SC, Microsoft YaHei, sans-serif" font-size="183.6" font-weight="900" letter-spacing="2" text-anchor="middle">
+      <text x="540" y="503.3">AFTER HOURS</text>
+      <text x="540" y="701.6">午夜电台</text>
+    </g>
+    <g fill="url(#sodaFill)" stroke="#342956" stroke-width="5" stroke-linejoin="round" paint-order="stroke fill" font-family="Arial Black, Avenir Next, PingFang SC, Microsoft YaHei, sans-serif" font-size="183.6" font-weight="900" letter-spacing="2" text-anchor="middle">
+      <text x="540" y="503.3">AFTER HOURS</text>
+      <text x="540" y="701.6">午夜电台</text>
+    </g>
+  </g>
+</svg>

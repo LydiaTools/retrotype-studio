@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ece9e2" />
+    <meta name="description" content="Create original retro title graphics with mixed Latin and CJK text. Load fonts locally and export PNG or SVG." />
+    <title>RetroType Studio — Retro title graphics for every script</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="wordmark" href="./" aria-label="RetroType Studio home">
+          <span class="wordmark-glyph" aria-hidden="true">R</span>
+          <span>RetroType <b>Studio</b></span>
+        </a>
+        <div class="topbar-actions">
+          <span class="local-indicator"><span class="local-dot" aria-hidden="true"></span><span data-copy="local">Fonts stay on this device</span></span>
+          <button id="languageButton" class="language-button" type="button" aria-label="Switch language">中文</button>
+          <button id="exportPng" class="button button-primary" type="button" data-copy="exportPng">Export PNG</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="controls" aria-label="Title controls">
+          <div class="controls-intro">
+            <p class="panel-kicker" data-copy="editor">Type editor</p>
+            <h1 data-copy="makeTitle">Make a title</h1>
+            <p data-copy="intro">Mix scripts, find the right weight, and export the artwork.</p>
+          </div>
+
+          <section class="control-section">
+            <label class="field-label" for="titleInput" data-copy="titleText">Title text</label>
+            <textarea id="titleInput" rows="3" maxlength="90" spellcheck="false" aria-describedby="titleHelp">AFTER HOURS
+午夜电台</textarea>
+            <div class="field-foot"><span id="titleHelp" data-copy="lineHint">Line breaks stay in the artwork.</span><span id="charCount">22 / 90</span></div>
+          </section>
+
+          <section class="control-section">
+            <div class="section-heading"><h2 data-copy="font">Font</h2><label class="select-wrap"><span class="visually-hidden" data-copy="scriptFallback">Script fallback</span><select id="scriptSelect" aria-label="Script fallback"><option value="auto">Auto</option><option value="zh">中文</option><option value="ja">日本語</option><option value="ko">한국어</option></select></label></div>
+            <div class="font-row">
+              <label class="select-wrap font-select-wrap"><span class="visually-hidden" data-copy="fontStyle">Font style</span><select id="fontSelect" aria-label="Font style"><option value="heavy" data-copy="fontHeavy">Heavy sans</option><option value="rounded" data-copy="fontRounded">Rounded</option><option value="serif" data-copy="fontSerif">Serif</option><option value="mono" data-copy="fontMono">Mono</option></select></label>
+              <label class="button button-quiet upload-button"><span data-copy="loadFont">Load font</span><input id="fontFile" type="file" accept=".woff,.woff2,.ttf,.otf,font/woff,font/woff2,font/ttf,font/otf" /></label>
+            </div>
+            <p class="font-file-note" data-copy="localFontNotice">This font file is read in your browser only.</p>
+            <div class="font-status-row"><span id="fontStatus" role="status" aria-live="polite" data-copy="systemFonts">Using system fonts</span><button id="removeFont" class="text-button hidden" type="button" data-copy="removeFont">Remove</button></div>
+            <label class="check-line"><input id="embedFont" type="checkbox" /><span data-copy="embedFont">Embed loaded font in SVG when its license allows</span></label>
+          </section>
+
+          <section class="control-section">
+            <div class="section-heading"><h2 data-copy="style">Style</h2><span id="styleName" class="quiet-value">Soda Pop</span></div>
+            <div class="style-grid" role="group" aria-label="Choose a title style">
+              <button class="style-choice active" type="button" data-style="soda" aria-pressed="true"><span class="style-sample sample-soda">Aa</span><span data-copy="soda">Soda Pop</span></button>
+              <button class="style-choice" type="button" data-style="chrome" aria-pressed="false"><span class="style-sample sample-chrome">Aa</span><span data-copy="chrome">Chrome Fold</span></button>
+              <button class="style-choice" type="button" data-style="print" aria-pressed="false"><span class="style-sample sample-print">Aa</span><span data-copy="print">Print Bloom</span></button>
+              <button class="style-choice" type="button" data-style="laser" aria-pressed="false"><span class="style-sample sample-laser">Aa</span><span data-copy="laser">Night Signal</span></button>
+            </div>
+          </section>
+
+          <section class="control-section sliders-section">
+            <label class="range-field"><span class="range-heading"><span data-copy="size">Type size</span><output id="sizeValue">17%</output></span><input id="sizeRange" type="range" min="9" max="26" value="17" /></label>
+            <label class="range-field"><span class="range-heading"><span data-copy="spacing">Letter spacing</span><output id="spacingValue">2</output></span><input id="spacingRange" type="range" min="-8" max="24" value="2" /></label>
+          </section>
+
+          <section class="control-section canvas-controls">
+            <div class="section-heading"><h2 data-copy="canvas">Canvas</h2><span id="canvasDimensions" class="quiet-value">1080 × 1080</span></div>
+            <div class="ratio-switch" role="group" aria-label="Canvas size">
+              <button class="ratio-choice active" type="button" data-ratio="square" aria-pressed="true" data-copy="square">Square</button>
+              <button class="ratio-choice" type="button" data-ratio="wide" aria-pressed="false" data-copy="wide">Wide</button>
+              <button class="ratio-choice" type="button" data-ratio="portrait" aria-pressed="false" data-copy="portrait">Portrait</button>
+            </div>
+            <div class="background-row">
+              <label for="backgroundColor" data-copy="background">Background</label>
+              <div class="background-tools"><input id="backgroundColor" type="color" value="#f3e9d6" aria-label="Background color" /><label class="check-line transparent-check"><input id="transparent" type="checkbox" /><span data-copy="transparent">Transparent</span></label></div>
+            </div>
+          </section>
+        </aside>
+
+        <section class="preview" aria-label="Live title preview">
+          <div class="preview-heading">
+            <div><p class="preview-kicker" data-copy="liveCanvas">Live canvas</p><h2 id="canvasLabel">Square / 1080 × 1080</h2></div>
+            <button id="resetButton" class="text-button reset-button" type="button" data-copy="reset">Reset</button>
+          </div>
+          <div class="stage-wrap" id="stageWrap">
+            <div class="stage-ruler ruler-top" aria-hidden="true"></div>
+            <div class="stage-ruler ruler-left" aria-hidden="true"></div>
+            <div class="artboard-frame">
+              <svg id="previewSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-label="Live title artwork"></svg>
+            </div>
+            <span class="crop-mark crop-tl" aria-hidden="true"></span><span class="crop-mark crop-tr" aria-hidden="true"></span><span class="crop-mark crop-bl" aria-hidden="true"></span><span class="crop-mark crop-br" aria-hidden="true"></span>
+          </div>
+          <div class="preview-footer"><p id="exportHint" role="status" aria-live="polite" data-copy="exportHint">PNG keeps the current look. SVG keeps the text editable.</p><button id="exportSvg" class="button button-outline" type="button" data-copy="exportSvg">Export SVG</button></div>
+        </section>
+      </main>
+      <footer class="app-footer"><span data-copy="footer">An independent title-art editor. No account or AI service.</span><span>v0.1.0</span></footer>
+    </div>
+  </body>
+</html>
