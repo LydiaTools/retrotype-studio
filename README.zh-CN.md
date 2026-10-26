@@ -6,7 +6,7 @@
 
 ## 在线使用
 
-**[打开 RetroType Studio](https://lydiatools.github.io/retrotype-studio/)** · [English README](README.md)
+**[打开 RetroType Studio](https://lydiatools.github.io/retrotype-studio/)** · [English README](README.md) · [反馈问题或建议功能](https://github.com/LydiaTools/retrotype-studio/issues/new)
 
 ## 功能
 

@@ -13,7 +13,7 @@ const copy = {
     exportSvg: "Export SVG", exportHint: "PNG keeps the current look. SVG keeps the text editable.",
     pngDone: "PNG downloaded.", svgDone: "SVG downloaded.", svgFontHint: "SVG references your selected font unless you embed it.",
     exportFailed: "Could not export this artwork. Try another font or a shorter title.",
-    footer: "An independent title-art editor. No account or AI service.", ariaArtwork: "Live title artwork",
+    footer: "An independent title-art editor. No account or AI service.", feedback: "Report an issue", ariaArtwork: "Live title artwork",
     ariaChooseStyle: "Choose a title style", ariaCanvas: "Canvas size", emptyTitle: "Type a title",
     language: "中文",
     resetDone: "Preview reset.", scriptAuto: "Auto", scriptZh: "中文", scriptJa: "日本語", scriptKo: "한국어"
@@ -32,7 +32,7 @@ const copy = {
     exportSvg: "导出 SVG", exportHint: "PNG 保留当前视觉效果；SVG 中的文字可继续编辑。",
     pngDone: "PNG 已下载。", svgDone: "SVG 已下载。", svgFontHint: "SVG 会引用当前字体；如授权允许，可选择嵌入。",
     exportFailed: "无法导出这张图。请换一种字体或缩短标题。",
-    footer: "独立制作的标题图编辑器。不需要账号或 AI 服务。", ariaArtwork: "标题图实时预览",
+    footer: "独立制作的标题图编辑器。不需要账号或 AI 服务。", feedback: "反馈问题", ariaArtwork: "标题图实时预览",
     ariaChooseStyle: "选择标题风格", ariaCanvas: "选择画布比例", emptyTitle: "输入标题文字",
     language: "EN",
     resetDone: "预览已重置。", scriptAuto: "自动", scriptZh: "简体中文", scriptJa: "日文", scriptKo: "韩文"

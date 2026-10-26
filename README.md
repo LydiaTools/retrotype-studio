@@ -6,7 +6,7 @@
 
 ## Open the editor
 
-**[Use RetroType Studio](https://lydiatools.github.io/retrotype-studio/)** · [中文说明](README.zh-CN.md)
+**[Use RetroType Studio](https://lydiatools.github.io/retrotype-studio/)** · [中文说明](README.zh-CN.md) · [Report a bug or suggest a feature](https://github.com/LydiaTools/retrotype-studio/issues/new)
 
 ## What it does
 
