@@ -26,6 +26,27 @@ python3 -m http.server 4173
 
 用浏览器打开 `http://localhost:4173`。
 
+## 通过命令行导出
+
+需要让 Agent、幻灯片流程或脚本重复制作标题时，可以使用可选命令行入口。它在临时无头浏览器中运行同一个本地编辑器，导出实际生成的 SVG 或 PNG：
+
+```bash
+git clone https://github.com/LydiaTools/retrotype-studio.git
+cd retrotype-studio
+npm ci
+npx playwright install chromium
+node scripts/export.mjs --text "NIGHT 夜" --style chrome --ratio wide --out title.svg
+node scripts/export.mjs --text "NIGHT 夜" --style print --ratio wide --out title.png
+```
+
+![命令行导出的横版中英混排标题 NIGHT 夜](assets/cli-example.png)
+
+*第二条命令在 macOS 使用系统字体实际导出的 PNG。*
+
+需要 Node 20+。运行 `node scripts/export.mjs --help` 查看样式、尺寸、字距、字体预设和背景选项。输出路径必须是新文件，工具不会覆盖已有文件。临时浏览器使用离线上下文，不连接模型或网站。命令行目前使用系统字体预设，不支持上传字体；SVG 引用系统字体，在另一台电脑上外观可能不同，PNG 保留运行机器上的渲染结果。
+
+如已安装 Chrome／Chromium，可将 `RETROTYPE_CHROME_PATH` 设为其可执行文件完整路径，免下载 Playwright 浏览器。网页版仍可不安装 Node 直接使用。
+
 ## 字体与导出
 
 编辑器使用当前浏览器可用的字体。如果缺少文字字形或想换字体，可以载入 `.woff`、`.woff2`、`.ttf` 或 `.otf` 文件。字体只在当前浏览器会话中读取，不会上传；超过 12 MB 的文件不接受。
@@ -34,7 +55,7 @@ PNG 保留浏览器当前渲染效果，输出宽高各为所选 SVG 画布的�
 
 ## 无需构建步骤
 
-RetroType Studio 是静态网页工具，不需要包管理器、AI API、分析服务、登录或服务器端字体存储。GitHub Pages 会部署本仓库中的静态文件。
+网页版是静态工具，不需要包管理器、AI API、分析服务、登录或服务器端字体存储。GitHub Pages 会部署本仓库中的静态文件；可选命令行入口需要按上文安装 Node 和 Playwright。
 
 ## 项目说明
 
