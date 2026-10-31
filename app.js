@@ -83,6 +83,7 @@ const els = {
   transparent: document.querySelector("#transparent"),
   dimensions: document.querySelector("#canvasDimensions"),
   canvasLabel: document.querySelector("#canvasLabel"),
+  exportDimensions: document.querySelector("#exportDimensions"),
   charCount: document.querySelector("#charCount"),
   exportHint: document.querySelector("#exportHint"),
   languageButton: document.querySelector("#languageButton")
@@ -185,6 +186,7 @@ function buildArtwork() {
   els.dimensions.textContent = `${width} × ${height}`;
   const ratioLabel = tr(ratio);
   els.canvasLabel.textContent = `${ratioLabel} / ${width} × ${height}`;
+  els.exportDimensions.textContent = `PNG ${width * 2} × ${height * 2} px · SVG ${width} × ${height}`;
   els.sizeValue.textContent = `${els.size.value}%`;
   els.spacingValue.textContent = String(spacing);
   els.charCount.textContent = `${text.length} / 90`;

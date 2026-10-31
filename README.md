@@ -30,7 +30,7 @@ Open `http://localhost:4173` in a browser.
 
 The editor uses fonts available to your browser. If a character is missing or a different typeface is needed, load a `.woff`, `.woff2`, `.ttf`, or `.otf` file. The font is read in the current browser session and is not uploaded. Uploaded files over 12 MB are not accepted.
 
-PNG captures the current browser rendering. SVG keeps text editable and normally references the selected font by family name. The optional font-embedding control can package a loaded font inside the SVG; use it only when that font's license permits embedding. Other devices may use a fallback font if the selected font is unavailable.
+PNG captures the current browser rendering at twice the selected SVG canvas dimensions: for example, the 1080 × 1080 canvas exports a 2160 × 2160 PNG. The editor shows both sizes. SVG keeps text editable and normally references the selected font by family name. The optional font-embedding control can package a loaded font inside the SVG; use it only when that font's license permits embedding. Other devices may use a fallback font if the selected font is unavailable.
 
 ## Run without a build step
 
