@@ -26,6 +26,27 @@ python3 -m http.server 4173
 
 Open `http://localhost:4173` in a browser.
 
+## Export from a script
+
+For an Agent, slide workflow, or repeatable batch, the optional CLI drives the same local editor in a temporary headless browser and saves its actual SVG or PNG export:
+
+```bash
+git clone https://github.com/LydiaTools/retrotype-studio.git
+cd retrotype-studio
+npm ci
+npx playwright install chromium
+node scripts/export.mjs --text "NIGHT 夜" --style chrome --ratio wide --out title.svg
+node scripts/export.mjs --text "NIGHT 夜" --style print --ratio wide --out title.png
+```
+
+![A wide retro title, NIGHT 夜, exported by the CLI](assets/cli-example.png)
+
+*Actual PNG from the second command, rendered on macOS with system fonts.*
+
+Requires Node 20+. Run `node scripts/export.mjs --help` for styles, size, spacing, font presets and background options. The output path must be new; the CLI refuses to overwrite an existing file. It opens a temporary offline browser context and doesn't connect to a model or website. The CLI currently uses system font presets, not uploaded font files; SVG text references available fonts, and appearance can differ on another machine. PNG captures the rendering on the machine that runs the command.
+
+You can use an existing Chrome/Chromium executable by setting `RETROTYPE_CHROME_PATH` to its full path instead of downloading Playwright's browser. This is an optional command-line path; the web editor still runs without Node or a build step.
+
 ## Fonts and exports
 
 The editor uses fonts available to your browser. If a character is missing or a different typeface is needed, load a `.woff`, `.woff2`, `.ttf`, or `.otf` file. The font is read in the current browser session and is not uploaded. Uploaded files over 12 MB are not accepted.
@@ -34,7 +55,7 @@ PNG captures the current browser rendering at twice the selected SVG canvas dime
 
 ## Run without a build step
 
-RetroType Studio is a static browser app. It uses no package manager, AI API, analytics, login, or server-side font storage. GitHub Pages deploys the files in this repository.
+The browser editor is a static app: it uses no package manager, AI API, analytics, login, or server-side font storage. GitHub Pages deploys the files in this repository. The optional CLI has the separate Node and Playwright setup above.
 
 ## Project notes
 
